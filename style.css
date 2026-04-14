@@ -31,6 +31,14 @@ header {
     padding: 10px;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .main {
     text-align: center;
     padding: 40px;
