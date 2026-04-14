@@ -1,5 +1,16 @@
-html {
-    height: 100%;
+@media (max-width: 600px) {
+    .main {
+        padding: 20px; /* Уменьшаем внутренние отступы */
+        width: 90%;    /* Чтобы контент не прилипал к краям экрана */
+    }
+
+    .big-text {
+        font-size: 18px; /* Немного уменьшаем шрифт заголовка */
+    }
+
+    .small-text {
+        font-size: 9px;  /* И подписи */
+    }
 }
 
 body {
@@ -9,12 +20,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-
+    
     /* Updated Gradient Background */
     background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(5, 5, 5) 100%);
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
 
     color: white;
     
