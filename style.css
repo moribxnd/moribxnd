@@ -2,34 +2,33 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center; /* Центр по горизонтали */
-    align-items: center;     /* Центр по вертикали */
-    min-height: 100vh;      /* Высота на весь экран */
-    background: #222222;
-    background: linear-gradient(180deg,rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
-    color: white;           /* Белый цвет текста */
-
-    font-family: 'Geist Mono', 'Arial', sans-serif;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Updated Gradient Background */
+    background: linear-gradient(180deg, rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    color: white;
+    
+    /* 2. Set the font-family to 'Geist Mono' */
+    font-family: 'Geist Mono', monospace;
 }
 
-/* Стили для контейнера */
 .main {
     text-align: center;
     padding: 40px;
     border-radius: 10px;
 }
 
-/* Большой текст */
 .big-text {
     font-size: 48px;
     margin: 0 0 10px 0;
     font-weight: bold;
 }
 
-/* Маленький текст */
 .small-text {
     font-size: 16px;
-    color: #cccccc80; /* Серый цвет для контраста */
-    font-weight: lighter;
+    /* Using standard rgba for cross-browser support */
+    color: rgba(204, 204, 204, 0.5); 
+    font-weight: 300;
     margin: 0;
 }
