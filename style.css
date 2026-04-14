@@ -1,60 +1,53 @@
-@media (max-width: 600px) {
-    .main {
-        padding: 20px; /* Уменьшаем внутренние отступы */
-        width: 90%;    /* Чтобы контент не прилипал к краям экрана */
-    }
-
-    .big-text {
-        font-size: 18px; /* Немного уменьшаем шрифт заголовка */
-    }
-
-    .small-text {
-        font-size: 9px;  /* И подписи */
-    }
-}
-
 html {
-    background-color: rgb(10, 10, 10);
-    font-family: 'Geist Mono', monospace;
-}
+            background-color: rgb(10, 10, 10);
+            font-family: 'Geist Mono', monospace;
+            /* Stack header and body vertically */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-header {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 10px;
+        }
 
-    color: white;    
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* This ensures the body starts below the header */
+            flex-grow: 1; 
+        }
 
-    text-align: center;
-    padding: 10px;
-}
+        .main {
+            text-align: center;
+            padding: 40px;
+            border-radius: 10px;
+        }
 
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .big-text {
+            font-size: 20px;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+            color: white;
+        }
 
-.main {
-    text-align: center;
-    padding: 40px;
-    border-radius: 10px;
-}
+        .small-text {
+            font-size: 10px;
+            color: rgba(204, 204, 204, 0.5);
+            font-weight: 300;
+            margin: 0;
+        }
 
-.big-text {
-    font-size: 20px;
-    margin: 0 0 10px 0;
-    font-weight: bold;
-}
-
-.small-text {
-    font-size: 10px;
-    /* Using standard rgba for cross-browser support */
-    color: rgba(204, 204, 204, 0.5); 
-    font-weight: 300;
-    margin: 0;
-}
+        @media (max-width: 600px) {
+            .main { padding: 20px; width: 90%; }
+            .big-text { font-size: 18px; }
+            .small-text { font-size: 9px; }
+        }
