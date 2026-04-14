@@ -14,21 +14,22 @@
 }
 
 html {
-    /*background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(5, 5, 5) 100%);*/
     background-color: rgb(10, 10, 10);
+    font-family: 'Geist Mono', monospace;
 }
 
-body {
+header {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color: white;
-    
-    /* 2. Set the font-family to 'Geist Mono' */
-    font-family: 'Geist Mono', monospace;
+    color: white;    
+
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
 }
 
 .main {
