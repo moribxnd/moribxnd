@@ -13,16 +13,17 @@
     }
 }
 
+html {
+    background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(5, 5, 5) 100%);
+}
+
 body {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    
-    /* Updated Gradient Background */
-    background: linear-gradient(180deg, rgb(10, 10, 10) 0%, rgb(5, 5, 5) 100%);
+    min-height: 100vh;    
 
     color: white;
     
