@@ -30,5 +30,6 @@ body {
 .small-text {
     font-size: 16px;
     color: #cccccc80; /* Серый цвет для контраста */
+    font-weight: lighter;
     margin: 0;
 }
