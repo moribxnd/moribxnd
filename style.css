@@ -5,7 +5,7 @@ body {
     justify-content: center; /* Центр по горизонтали */
     align-items: center;     /* Центр по вертикали */
     min-height: 100vh;      /* Высота на весь экран */
-    background-color: #1a1a1a; /* Темный фон */
+    background-color: linear-gradient(90deg,rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%); /* Темный фон */
     color: white;           /* Белый цвет текста */
     font-family: sans-serif;
 }
@@ -15,8 +15,6 @@ body {
     text-align: center;
     padding: 40px;
     border-radius: 10px;
-    background-color: #2d2d2d; /* Чуть светлее фона */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 /* Большой текст */
