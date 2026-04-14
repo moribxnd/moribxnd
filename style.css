@@ -6,7 +6,7 @@ body {
     align-items: center;     /* Центр по вертикали */
     min-height: 100vh;      /* Высота на весь экран */
     background: #222222;
-    background: linear-gradient(0deg,rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    background: linear-gradient(180deg,rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
     color: white;           /* Белый цвет текста */
     font-family: sans-serif;
 }
