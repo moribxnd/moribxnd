@@ -9,7 +9,7 @@ body {
     background: linear-gradient(180deg,rgba(34, 34, 34, 1) 0%, rgba(0, 0, 0, 1) 100%);
     color: white;           /* Белый цвет текста */
 
-    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-family: 'Geist Mono', 'Arial', sans-serif;
 }
 
 /* Стили для контейнера */
