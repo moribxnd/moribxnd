@@ -27,6 +27,56 @@ header {
     color: white;
     padding: 10px;
 }
+.grid-container {
+    display: grid;
+    /* Создаем 6 колонок одинаковой ширины */
+    grid-template-columns: repeat(6, 1fr); 
+    /* Расстояние между колонками (gutter) */
+    gap: 20px; 
+    /* Внешние отступы (margin) */
+    padding: 0 20px; 
+    max-width: 1200px; /* Ограничим ширину для красоты */
+    margin: 150px auto 0; /* Центрируем сетку и даем отступ сверху */
+}
+/* Левая часть: колонки 2 */
+.left {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+        color: rgba(255, 255, 255, 0.5);
+
+}
+
+/* Правая часть: колонки с 4 по 6 */
+.right {
+    grid-column: 4 / 6; 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+
+/* Стилизация ссылок и текста */
+.side-content a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.side-content a:hover {
+    color: white;
+}
+
+.side-content p {
+    font-size: 14px;
+    
+    line-height: 1.6;
+    margin: 0;
+}
 body {
     margin: 0;
     padding: 0;
@@ -62,8 +112,15 @@ body {
     align-items: center;
     flex-grow: 1;
 }
-@media (max-width: 600px) {
-    .main { padding: 20px; width: 90%; }
-    .big-text { font-size: 18px; }
-    .small-text { font-size: 9px; }
+/* Адаптивность для мобилок */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* В одну колонку на телефонах */
+        text-align: center;
+    }
+    .left, .right {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 40px;
+    }
 }
