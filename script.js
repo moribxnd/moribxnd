@@ -1,80 +1,26 @@
-class TextScramble {
-  constructor(el) {
-    this.el = el;
-    this.chars = '!<>-_\\/[]{}—=+*^?#________';
-    this.update = this.update.bind(this);
-  }
-
-  setText(newText) {
-    const oldText = this.el.innerText;
-    const length = Math.max(oldText.length, newText.length);
-    const promise = new Promise((resolve) => (this.resolve = resolve));
-    this.queue = [];
-
-    for (let i = 0; i < length; i++) {
-      const from = oldText[i] || '';
-      const to = newText[i] || '';
-      const start = Math.floor(Math.random() * 40);
-      const end = start + Math.floor(Math.random() * 40);
-      this.queue.push({ from, to, start, end });
-    }
-
-    // ИСПРАВЛЕНИЕ: Останавливаем предыдущий кадр перед началом нового
-    cancelAnimationFrame(this.frameRequest);
-    this.frame = 0;
-    this.update();
-    return promise;
-  }
-
-  update() {
-    let output = '';
-    let complete = 0;
-
-    for (let i = 0, n = this.queue.length; i < n; i++) {
-      let { from, to, start, end, char } = this.queue[i];
-      if (this.frame >= end) {
-        complete++;
-        output += to;
-      } else if (this.frame >= start) {
-        if (!char || Math.random() < 0.28) {
-          char = this.randomChar();
-          this.queue[i].char = char;
-        }
-        output += `<span class="dud">${char}</span>`;
-      } else {
-        output += from;
-      }
-    }
-
-    this.el.innerHTML = output;
-
-    if (complete === this.queue.length) {
-      this.resolve();
-    } else {
-      this.frameRequest = requestAnimationFrame(this.update);
-      this.frame++;
-    }
-  }
-
-  randomChar() {
-    return this.chars[Math.floor(Math.random() * this.chars.length)];
-  }
-}
-
-// ПРОВЕРКА: Убедимся, что элемент существует, чтобы избежать ошибок в консоли
-const el = document.querySelector('.soon-text');
-
-if (el) {
-  const phrases = ['coming soon,', 'скоро будет', '近日公開'];
-  const fx = new TextScramble(el);
-  let counter = 0;
-
-  const next = () => {
-    fx.setText(phrases[counter]).then(() => {
-      setTimeout(next, 1500); // Немного увеличил задержку для читаемости
-    });
-    counter = (counter + 1) % phrases.length;
-  };
-
-  next();
-}
+(function() {
+  const element = document.getElementById('waveText');
+  if (!element) return;
+  
+  const text = element.textContent.trim();
+  const letters = text.split('');
+  
+  // Clear the element and wrap each letter in a span
+  element.textContent = '';
+  element.classList.add('wave-text');
+  
+  letters.forEach((letter, index) => {
+      const span = document.createElement('span');
+      span.textContent = letter;
+      span.classList.add('wave-letter');
+      // Create a wave effect: delay increases gradually, then decreases?
+      // Use a sinusoidal pattern for a smooth continuous wave
+      // For a simple left-to-right wave: delay = index * 0.1s
+      // But we can make it more organic with a sine wave pattern:
+      // delay = (index * 0.12) % (total duration) but we want it continuous.
+      // Using a stagger of 0.1s works well.
+      const delay = index * 0.1; // seconds
+      span.style.animationDelay = `${delay}s`;
+      element.appendChild(span);
+  });
+})();

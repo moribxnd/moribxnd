@@ -1,8 +1,25 @@
+/* Add wave animation styles */
+.wave-text {
+    display: inline-block;
+}
+.wave-letter {
+    display: inline-block;
+    animation: floatWave 2.5s ease-in-out infinite;
+    /* Each letter will get a custom delay via JS */
+}
+@keyframes floatWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px); /* float up 8px */
+    }
+}
+/* Keep existing styles */
 html {
     background-color: rgb(10, 10, 10);
     font-family: 'Geist Mono', monospace;
 }
-
 header {
     display: flex;
     justify-content: center;
@@ -10,37 +27,39 @@ header {
     color: white;
     padding: 10px;
 }
-
 body {
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* This ensures the body starts below the header */
-    flex-grow: 1; 
+    flex-grow: 1;
 }
-
-.main {
+.welcome {
     text-align: center;
     padding: 40px;
     border-radius: 10px;
 }
-
 .big-text {
     font-size: 20px;
     margin: 0 0 10px 0;
     font-weight: bold;
     color: white;
 }
-
 .small-text {
     font-size: 10px;
     color: rgba(204, 204, 204, 0.5);
     font-weight: 300;
     margin: 0;
 }
-
+.comingsoon{
+    margin: 250px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+}
 @media (max-width: 600px) {
     .main { padding: 20px; width: 90%; }
     .big-text { font-size: 18px; }
