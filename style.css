@@ -1,12 +1,12 @@
 /* ===== GLOBAL & RESET ===== */
 ::selection {
-  background: #ccc; /* Цвет фона при выделении */
+  background: #ababab; /* Цвет фона при выделении */
   color: rgb(10, 10, 10);      /* Цвет текста при выделении */
 }
 
 /* Для браузеров Firefox используется специальный префикс */
 ::-moz-selection {
-  background: #ccc;
+  background: #ababab;
   color: rgb(10, 10, 10);
 }
 
@@ -29,7 +29,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ccc;
+    color: #ababab;
     padding: 10px;
 }
 
@@ -43,12 +43,12 @@ header {
     font-size: 20px;
     margin: 0 0 10px 0;
     font-weight: bold;
-    color: #ccc;
+    color: #ababab;
 }
 
 .small-text {
     font-size: 10px;
-    color: rgba(204, 204, 204, 0.5);
+    color: rgba(204, 204, 204, 0.2);
     font-weight: 300;
     margin: 0;
 }
@@ -80,7 +80,6 @@ main {
     flex-direction: column;
     gap: 15px;
     text-align: left;
-    color: rgba(255, 255, 255, 0.5);
 }
 
 .right {
@@ -88,18 +87,18 @@ main {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    color: #ccc;
+    color: #ababab;
 }
 
 .side-content a {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.2);
     text-decoration: none;
     font-size: 70%;
     transition: 0.3s;
 }
 
 .side-content a:hover {
-    color: #ccc;
+    color: #ababab;
 }
 
 .side-content p {
