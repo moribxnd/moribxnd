@@ -94,7 +94,7 @@ main {
 .side-content a {
     color: rgba(255, 255, 255, 0.3);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 70%;
     transition: 0.3s;
 }
 
@@ -103,7 +103,7 @@ main {
 }
 
 .side-content p {
-    font-size: 15px;
+    font-size: 70%;
     margin: 0;
 }
 
