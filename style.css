@@ -1,4 +1,15 @@
 /* ===== GLOBAL & RESET ===== */
+::selection {
+  background: #ccc; /* Цвет фона при выделении */
+  color: rgb(10, 10, 10);      /* Цвет текста при выделении */
+}
+
+/* Для браузеров Firefox используется специальный префикс */
+::-moz-selection {
+  background: #ccc;
+  color: rgb(10, 10, 10);
+}
+
 html {
     background-color: rgb(10, 10, 10);
     font-family: 'Geist Mono', monospace;
@@ -93,7 +104,6 @@ main {
 
 .side-content p {
     font-size: 10px;
-    line-height: 1.6;
     margin: 0;
 }
 
