@@ -83,7 +83,7 @@ main {
 .side-content a {
     color: rgba(255, 255, 255, 0.3);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 10px;
     transition: 0.3s;
 }
 
