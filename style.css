@@ -1,25 +1,19 @@
-/* Add wave animation styles */
-.wave-text {
-    display: inline-block;
-}
-.wave-letter {
-    display: inline-block;
-    animation: floatWave 2.5s ease-in-out infinite;
-    /* Each letter will get a custom delay via JS */
-}
-@keyframes floatWave {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-8px); /* float up 8px */
-    }
-}
-/* Keep existing styles */
+/* ===== GLOBAL & RESET ===== */
 html {
     background-color: rgb(10, 10, 10);
     font-family: 'Geist Mono', monospace;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;           /* Ensure full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* Keep horizontal centering */
+}
+
+/* ===== HEADER ===== */
 header {
     display: flex;
     justify-content: center;
@@ -27,39 +21,64 @@ header {
     color: white;
     padding: 10px;
 }
+
+.welcome {
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.big-text {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    color: white;
+}
+
+.small-text {
+    font-size: 10px;
+    color: rgba(204, 204, 204, 0.5);
+    font-weight: 300;
+    margin: 0;
+}
+
+/* ===== MAIN & GRID (VERTICAL CENTERING) ===== */
+main {
+    flex: 1;                     /* Take all remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;         /* Vertical centering of the grid */
+    width: 100%;
+}
+
 .grid-container {
     display: grid;
-    /* Создаем 6 колонок одинаковой ширины */
-    grid-template-columns: repeat(6, 1fr); 
-    /* Расстояние между колонками (gutter) */
-    gap: 20px; 
-    /* Внешние отступы (margin) */
-    padding: 0 20px; 
-    max-width: 1200px; /* Ограничим ширину для красоты */
-    margin: 100px auto 0; /* Центрируем сетку и даем отступ сверху */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;              /* Horizontal centering only */
+    width: 100%;
 }
-/* Левая часть: колонки 2 */
+
+/* ===== LEFT & RIGHT CONTENT ===== */
 .left {
     grid-column: 2;
     display: flex;
     flex-direction: column;
     gap: 15px;
     text-align: left;
-        color: rgba(255, 255, 255, 0.5);
-
+    color: rgba(255, 255, 255, 0.5);
 }
 
-/* Правая часть: колонки с 4 по 6 */
 .right {
-    grid-column: 4 / 6; 
+    grid-column: 4 / 6;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 30px; 
     text-align: left;
     color: rgb(255, 255, 255);
 }
 
-/* Стилизация ссылок и текста */
 .side-content a {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
@@ -73,44 +92,36 @@ header {
 
 .side-content p {
     font-size: 14px;
-    
     line-height: 1.6;
     margin: 0;
 }
-body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-grow: 1;
-}
-.welcome {
-    text-align: center;
-    padding: 40px;
-    border-radius: 10px;
-}
-.big-text {
-    font-size: 20px;
-    margin: 0 0 10px 0;
-    font-weight: bold;
-    color: white;
-}
-.small-text {
-    font-size: 10px;
-    color: rgba(204, 204, 204, 0.5);
-    font-weight: 300;
-    margin: 0;
+
+/* ===== WAVE ANIMATION ===== */
+.wave-text {
+    display: inline-block;
 }
 
+.wave-letter {
+    display: inline-block;
+    animation: floatWave 2.5s ease-in-out infinite;
+}
 
-/* Адаптивность для мобилок */
+@keyframes floatWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ===== RESPONSIVE (MOBILE) ===== */
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr; /* В одну колонку на телефонах */
+        grid-template-columns: 1fr;
     }
     .left, .right {
         grid-column: 1 / -1;
-        padding: 60px;
+        padding: 20px 20px;         /* Reduced from 60px */
     }
 }
