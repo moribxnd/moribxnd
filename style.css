@@ -76,8 +76,7 @@ main {
     grid-column: 4 / 6;
     display: flex;
     flex-direction: column;
-    gap: 30px; 
-    text-align: left;
+    gap: 30px;
     color: rgb(255, 255, 255);
 }
 
@@ -125,6 +124,6 @@ main {
     }
     .left, .right {
         grid-column: 1 / -1;
-        padding: 0 20px;
+        padding: 0 50px;
     }
 }
