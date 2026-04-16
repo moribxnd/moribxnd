@@ -18,7 +18,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #ccc;
     padding: 10px;
 }
 
@@ -32,7 +32,7 @@ header {
     font-size: 20px;
     margin: 0 0 10px 0;
     font-weight: bold;
-    color: white;
+    color: #ccc;
 }
 
 .small-text {
@@ -77,18 +77,18 @@ main {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    color: rgb(255, 255, 255);
+    color: #ccc;
 }
 
 .side-content a {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.3);
     text-decoration: none;
     font-size: 14px;
     transition: 0.3s;
 }
 
 .side-content a:hover {
-    color: white;
+    color: #ccc;
 }
 
 .side-content p {
