@@ -119,6 +119,7 @@ main {
 @media (max-width: 768px) {
     .grid-container {
         grid-template-columns: 1fr;
+        padding: 50px 0;
     }
     .left, .right {
         grid-column: 1 / -1;
