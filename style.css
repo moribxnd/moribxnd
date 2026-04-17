@@ -90,6 +90,10 @@ main {
     color: #ababab;
 }
 
+.soon {
+    text-align: right;
+}
+
 .side-content a {
     color: rgba(255, 255, 255, 0.2);
     text-decoration: none;
