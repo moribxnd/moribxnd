@@ -58,7 +58,6 @@ main {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
 
     padding-bottom: 70px;
@@ -71,6 +70,17 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+
+    align-items: center;
+}
+.grid-container-art {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+
 }
 
 /* ===== LEFT & RIGHT CONTENT ===== */
@@ -120,6 +130,74 @@ main {
     animation: floatWave 2.5s ease-in-out infinite;
 }
 
+/* Ссылка возврата по центру над контентом */
+.return-link {
+    grid-column: 3 / 5;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.return-link a {
+    color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+    font-size: 10px;
+    transition: 0.3s;
+}
+
+.return-link a:hover {
+    color: #ababab;
+}
+
+/* Картинка занимает 3 и 4 колонки */
+.art-image {
+    grid-column: 3 / 5;
+    margin-top: 100px;
+}
+
+.art-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Блок текста на уровне картинки */
+.art-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Разносит текст по краям (верх/низ) */
+    color: #ababab;
+    font-size: 10px;
+    margin-top: 100px;
+}
+.text-right {
+    grid-column: 5;
+    text-align: left;
+}
+
+/* Позиционирование текста: слева (2 колонка) */
+.text-left {
+    grid-column: 2;
+    text-align: right;
+}
+
+.top-text-r {
+    margin-top: 0;
+    text-align: right;
+}
+.bottom-text-r {
+    margin-bottom: 0;
+}
+
+.top-text-l {
+    margin-top: 0;
+    text-align: left;
+    
+}
+.bottom-text-l {
+    margin-bottom: 0;
+    text-align: right;
+}
+
 @keyframes floatWave {
     0%, 100% {
         transform: translateY(0);
@@ -144,4 +222,10 @@ main {
     .right {
         text-align: right;
     }
+
+    .art-text {
+        font-size: 8px;
+    }
+
+    
 }
